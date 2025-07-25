@@ -59,7 +59,7 @@ Frontend React dependencies.
 
 ---
 
-##🚀 Usage
+## 🚀 Usage
 
 - Upload PDF, Word, or text files.  
 - Enter natural language queries to perform semantic search.  
