@@ -1,16 +1,16 @@
-# semantic-search-engine1
+# 🔍semantic-search-engine1
 
 An AI-powered document search engine allowing semantic search over PDF, Word, and text files. Built using FastAPI, FAISS, and Sentence Transformers with a React frontend.
 
 ---
 
-## Semantic Search Engine
+## 💡Overview
 
 This project implements a semantic document search engine that extracts meaningful embeddings from uploaded documents and enables context-aware search queries beyond keyword matching.
 
 ---
 
-## Features
+## ✨Features
 
 - Semantic search based on Sentence Transformers embeddings  
 - Multi-format upload: PDF, DOCX, TXT  
@@ -19,7 +19,7 @@ This project implements a semantic document search engine that extracts meaningf
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ### 1. `backend/app.py`  
 FastAPI app handling document upload, indexing, and search.
@@ -41,7 +41,7 @@ Frontend React dependencies.
 
 ---
 
-## How to Run
+## ⚙️How to Run
 
 - Install backend dependencies:  
   `pip install -r backend/requirements.txt`
@@ -59,7 +59,7 @@ Frontend React dependencies.
 
 ---
 
-## Usage
+##🚀 Usage
 
 - Upload PDF, Word, or text files.  
 - Enter natural language queries to perform semantic search.  
