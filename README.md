@@ -1,167 +1,69 @@
-semantic-search-engine1
-An AI-powered document search engine that lets you upload and search across PDF, Word, and text files using semantic understanding. Built with FastAPI, React, FAISS, and Sentence Transformers to deliver intelligent, context-aware search results beyond simple keyword matching.
+# semantic-search-engine1
 
-Overview
-This project implements an AI-powered semantic document search engine that allows users to upload and search across PDF, Word, and text files using natural language understanding rather than traditional keyword matching.
+An AI-powered document search engine allowing semantic search over PDF, Word, and text files. Built using FastAPI, FAISS, and Sentence Transformers with a React frontend.
 
-The backend leverages FastAPI, FAISS, and Sentence Transformers, while the frontend is built using React. The system enables intelligent, context-aware search across large collections of documents.
+---
 
-Features
-🔍 Semantic Search: Uses embeddings to understand and match query intent with document content.
+## Semantic Search Engine
 
-📄 Multi-format Upload: Supports PDF, DOCX, and TXT files.
+This project implements a semantic document search engine that extracts meaningful embeddings from uploaded documents and enables context-aware search queries beyond keyword matching.
 
-🚀 Fast Retrieval: Utilizes FAISS for efficient similarity search in high-dimensional space.
+---
 
-🧠 Contextual Understanding: Powered by Sentence Transformers (e.g., all-MiniLM-L6-v2).
+## Features
 
-🌐 Interactive UI: React-based frontend for smooth upload, query, and results display.
+- Semantic search based on Sentence Transformers embeddings  
+- Multi-format upload: PDF, DOCX, TXT  
+- Efficient similarity search using FAISS  
+- Interactive React-based UI for uploading and searching documents
 
-Project Structure
-1. backend/app.py
-This module contains the FastAPI application managing the backend API for document upload, indexing, and semantic search.
+---
 
-Attributes:
+## Project Structure
 
-app: FastAPI instance.
+### 1. `backend/app.py`  
+FastAPI app handling document upload, indexing, and search.
 
-index: FAISS index for semantic search.
+### 2. `backend/build_index.py`  
+Script to parse documents, generate embeddings, and build the FAISS index.
 
-embedder: Sentence Transformer model for embedding queries and documents.
+### 3. `frontend/src/App.js`  
+React frontend for uploading documents and querying the semantic search.
 
-Methods / Endpoints:
+### 4. `test/test_backend.py`  
+Unit tests for backend API endpoints.
 
-upload_documents(): API endpoint to upload and parse PDF, Word, and text files.
+### 5. `requirements.txt`  
+Backend dependencies including FastAPI, FAISS, Sentence Transformers.
 
-build_index(): Processes uploaded documents, generates embeddings, and builds the FAISS index.
+### 6. `package.json`  
+Frontend React dependencies.
 
-search(query: str): Accepts a search query and returns the most semantically relevant document snippets.
+---
 
-health_check(): Endpoint to verify API status.
+## How to Run
 
-2. backend/build_index.py
-Script to build or update the FAISS index from document embeddings.
+- Install backend dependencies:  
+  `pip install -r backend/requirements.txt`
 
-Functions:
+- Start backend server:  
+  `uvicorn backend.app:app --reload`
 
-parse_documents(directory): Extracts text from various document formats.
+- Navigate to frontend and install dependencies:  
+  `cd frontend && npm install`
 
-embed_documents(texts): Converts text snippets into vector embeddings.
+- Start frontend app:  
+  `npm start`
 
-create_faiss_index(embeddings): Builds and saves the FAISS index.
+- Open browser at `http://localhost:3000`
 
-3. frontend/src/App.js
-The main React component handling the user interface for document upload, search input, and displaying search results.
+---
 
-Features:
+## Usage
 
-File upload functionality supporting PDFs, DOCX, and TXT.
+- Upload PDF, Word, or text files.  
+- Enter natural language queries to perform semantic search.  
+- View ranked relevant document snippets.
 
-Search bar for semantic queries.
+---
 
-Display of ranked search results with snippet previews.
-
-Responsive design for usability.
-
-4. test/test_backend.py
-Unit tests for backend functionality using pytest and httpx.
-
-Fixtures:
-
-client(): Sets up a test FastAPI client instance.
-
-Test Cases:
-
-test_upload_documents(): Verifies document upload handling.
-
-test_build_index(): Checks index creation from uploaded documents.
-
-test_search(): Validates semantic search returns relevant results.
-
-test_health_check(): Ensures API is reachable.
-
-5. requirements.txt
-Lists all Python dependencies required for the backend service:
-
-nginx
-Copy
-Edit
-fastapi
-uvicorn
-faiss-cpu
-sentence-transformers
-python-multipart
-PyMuPDF
-python-docx
-pytest
-httpx
-6. package.json
-Defines frontend React app dependencies such as:
-
-react
-
-axios
-
-react-dropzone
-
-@mui/material (or any UI framework used)
-
-How to Run
-Install backend dependencies:
-
-bash
-Copy
-Edit
-pip install -r backend/requirements.txt
-Start the FastAPI backend server:
-
-lua
-Copy
-Edit
-uvicorn backend.app:app --reload
-Navigate to the frontend directory:
-
-bash
-Copy
-Edit
-cd frontend
-Install frontend dependencies:
-
-nginx
-Copy
-Edit
-npm install
-Start the React frontend app:
-
-sql
-Copy
-Edit
-npm start
-Open the app in your browser:
-
-arduino
-Copy
-Edit
-http://localhost:3000
-Run backend tests:
-
-bash
-Copy
-Edit
-pytest test/test_backend.py
-Usage
-Upload documents in PDF, Word, or text format via the web interface.
-
-The system extracts and processes the document content into semantic embeddings.
-
-Enter your search query in natural language to find relevant information.
-
-View ranked search results based on semantic similarity, not just keyword matches.
-
-Click on results to see the exact content snippet and document source.
-
-Use filters to narrow down search results by document type or date (if implemented).
-
-Add new documents anytime to expand the searchable knowledge base.
-
-Monitor backend logs for processing status and error tracking.
