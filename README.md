@@ -1,5 +1,5 @@
-# semantic-search-engine1
-An AI-powered document search engine that lets you upload and search across PDF, Word, and text files using semantic understanding. Built with FastAPI, React, FAISS, and Sentence Transformers to deliver intelligent, context-aware search results beyond simple keyword matching
+semantic-search-engine1
+An AI-powered document search engine that lets you upload and search across PDF, Word, and text files using semantic understanding. Built with FastAPI, React, FAISS, and Sentence Transformers to deliver intelligent, context-aware search results beyond simple keyword matching.
 
 Overview
 This project implements an AI-powered semantic document search engine that allows users to upload and search across PDF, Word, and text files using natural language understanding rather than traditional keyword matching.
@@ -18,8 +18,8 @@ Features
 🌐 Interactive UI: React-based frontend for smooth upload, query, and results display.
 
 Project Structure
-backend/app.py
-This module contains the FastAPI application managing the backend API for document upload, indexing, and semantic search:
+1. backend/app.py
+This module contains the FastAPI application managing the backend API for document upload, indexing, and semantic search.
 
 Attributes:
 
@@ -39,7 +39,7 @@ search(query: str): Accepts a search query and returns the most semantically rel
 
 health_check(): Endpoint to verify API status.
 
-backend/build_index.py
+2. backend/build_index.py
 Script to build or update the FAISS index from document embeddings.
 
 Functions:
@@ -50,7 +50,7 @@ embed_documents(texts): Converts text snippets into vector embeddings.
 
 create_faiss_index(embeddings): Builds and saves the FAISS index.
 
-frontend/src/App.js
+3. frontend/src/App.js
 The main React component handling the user interface for document upload, search input, and displaying search results.
 
 Features:
@@ -63,7 +63,7 @@ Display of ranked search results with snippet previews.
 
 Responsive design for usability.
 
-test/test_backend.py
+4. test/test_backend.py
 Unit tests for backend functionality using pytest and httpx.
 
 Fixtures:
@@ -80,28 +80,22 @@ test_search(): Validates semantic search returns relevant results.
 
 test_health_check(): Ensures API is reachable.
 
-requirements.txt
+5. requirements.txt
 Lists all Python dependencies required for the backend service:
 
+nginx
+Copy
+Edit
 fastapi
-
 uvicorn
-
 faiss-cpu
-
 sentence-transformers
-
 python-multipart
-
 PyMuPDF
-
 python-docx
-
 pytest
-
 httpx
-
-package.json
+6. package.json
 Defines frontend React app dependencies such as:
 
 react
@@ -110,43 +104,64 @@ axios
 
 react-dropzone
 
-material-ui/core (or any UI framework used)
+@mui/material (or any UI framework used)
 
 How to Run
 Install backend dependencies:
+
+bash
+Copy
+Edit
 pip install -r backend/requirements.txt
-
 Start the FastAPI backend server:
+
+lua
+Copy
+Edit
 uvicorn backend.app:app --reload
-
 Navigate to the frontend directory:
+
+bash
+Copy
+Edit
 cd frontend
-
 Install frontend dependencies:
+
+nginx
+Copy
+Edit
 npm install
-
 Start the React frontend app:
+
+sql
+Copy
+Edit
 npm start
+Open the app in your browser:
 
-Open http://localhost:3000 in your browser to use the app
-
+arduino
+Copy
+Edit
+http://localhost:3000
 Run backend tests:
+
+bash
+Copy
+Edit
 pytest test/test_backend.py
-
 Usage
-Upload documents in PDF, Word, or text format via the web interface
+Upload documents in PDF, Word, or text format via the web interface.
 
-The system extracts and processes the document content into semantic embeddings
+The system extracts and processes the document content into semantic embeddings.
 
-Enter your search query in natural language to find relevant information
+Enter your search query in natural language to find relevant information.
 
-View ranked search results based on semantic similarity, not just keyword matches
+View ranked search results based on semantic similarity, not just keyword matches.
 
-Click on results to see the exact content snippet and document source
+Click on results to see the exact content snippet and document source.
 
-Use filters to narrow down search results by document type or date (if implemented)
+Use filters to narrow down search results by document type or date (if implemented).
 
-Add new documents anytime to expand the searchable knowledge base
+Add new documents anytime to expand the searchable knowledge base.
 
-Monitor backend logs for processing status and error tracking
-
+Monitor backend logs for processing status and error tracking.
